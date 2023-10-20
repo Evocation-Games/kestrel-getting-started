@@ -48,6 +48,8 @@ This should launch the Kestrel Test Player and use the specified game file as it
 appear with the title "MySimpleGame" and nothing but a black fill. If this is what you're getting, then congratulations! You have successfully built
 your first game in Kestrel.
 
+![img](docs/images/my-simple-game.png)
+
 ## Configuring
 Navigate back out of the `MySimpleProject` directory and remove it.
 
@@ -84,3 +86,5 @@ kestrel --game build/Dialog.rsrx
 
 If everything has worked correctly, then you should have a kestrel test player open a window titled "DialogExample", with an ImGui dialog and console
 present within it.
+
+![img](docs/images/dialog-example.png)
