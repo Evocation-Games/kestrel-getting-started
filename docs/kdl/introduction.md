@@ -83,5 +83,7 @@ is purely to visually illustrate the contents of the `result.kdat` file. You can
 tool to open Kestrel data files and take a look inside. ResForge is reading the data files using the same underlying Graphite library as 
 Kestrel is.
 
-<img src="https://github.com/Evocation-Games/kestrel-getting-started/blob/004bbf557437f40521cf0d61e6e113a50796e15e/docs/images/res-forge-fruit-names.png" width="766" />
-<img src="https://github.com/Evocation-Games/kestrel-getting-started/blob/004bbf557437f40521cf0d61e6e113a50796e15e/docs/images/res-forge-editor-fruit-names.png" width="653" />
+<p align="center">
+    <img src="https://github.com/Evocation-Games/kestrel-getting-started/blob/004bbf557437f40521cf0d61e6e113a50796e15e/docs/images/res-forge-fruit-names.png" width="766" />
+    <img src="https://github.com/Evocation-Games/kestrel-getting-started/blob/004bbf557437f40521cf0d61e6e113a50796e15e/docs/images/res-forge-editor-fruit-names.png" width="653" />
+</p>
