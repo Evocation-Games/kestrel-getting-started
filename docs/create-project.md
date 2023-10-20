@@ -48,7 +48,7 @@ This should launch the Kestrel Test Player and use the specified game file as it
 appear with the title "MySimpleGame" and nothing but a black fill. If this is what you're getting, then congratulations! You have successfully built
 your first game in Kestrel.
 
-![img](docs/images/my-simple-game.png)
+![img](https://github.com/Evocation-Games/kestrel-getting-started/blob/899be4644c662d23d5e8aa6499465c212c827431/docs/images/my-simple-game.png)
 
 ## Configuring
 Navigate back out of the `MySimpleProject` directory and remove it.
@@ -87,4 +87,4 @@ kestrel --game build/Dialog.rsrx
 If everything has worked correctly, then you should have a kestrel test player open a window titled "DialogExample", with an ImGui dialog and console
 present within it.
 
-![img](docs/images/dialog-example.png)
+![img](https://github.com/Evocation-Games/kestrel-getting-started/blob/899be4644c662d23d5e8aa6499465c212c827431/docs/images/dialog-example.png)
