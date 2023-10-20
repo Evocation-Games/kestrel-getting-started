@@ -87,3 +87,90 @@ Kestrel is.
     <img src="https://github.com/Evocation-Games/kestrel-getting-started/blob/004bbf557437f40521cf0d61e6e113a50796e15e/docs/images/res-forge-fruit-names.png" width="766" />
     <img src="https://github.com/Evocation-Games/kestrel-getting-started/blob/004bbf557437f40521cf0d61e6e113a50796e15e/docs/images/res-forge-editor-fruit-names.png" width="653" />
 </p>
+
+## Literals & Syntax
+Let's take a step back and start taking a look at the structure of KDL itself. We've now seen how it can be used to define data and build data files
+accordingly. Before proceeding further, we need to take a look at the syntax of the language. This includes control structures and literals.
+
+### Strings
+String literals are one of the most basic aspects of KDL. A string is a sequence of text surrounded by quotation marks. For example:
+
+```kdl
+"this is a string"
+```
+
+There are some caveats with strings however. They do not support escape sequences, such as `\"` or `\n`, which are common in most languages. This is currently
+a limitation of the KDL parser, and will be implemented at somepoint.
+
+### Integers
+Integer literals are another extremely basic aspect of KDL. Integers are whole numbers that can take several forms:
+
+```kdl
+// Stanard Integers
+42
+100
+-32
+-128
+
+// Hexadecimal Numbers
+0x80
+0xDEADBEEF
+
+// Percentages
+50%
+```
+
+All types of integer ultimately get encoded exactly the same, but the representations can be useful for semantics and visually recognising
+those values.
+
+### Resource References
+Resource references are a unique type of literal to KDL/Kestrel, and represent the identity of a resource. At there most basic they
+simply represent a resource id, like so:
+
+```kdl
+#128
+#1000
+#10000
+```
+
+Each of these references are referring to resources of the _Global_ resource container and ignoring resource type. A `StringList (STR#)` resource with
+an id of `128` or a `MacintoshPicture (PICT)` resource with an id of `128` would both be matched by the reference `#128`. Generally
+unconstrained resource references should be avoided, and _must_ rely on something else to infer the resource type.
+
+We can add constraints to a resource reference. There are two levels of constraint that can be applied. The first is a constraint on 
+the resource type.
+
+```kdl
+#[ResourceType.]128
+#StringList.128
+#MacintoshPicture.128
+```
+
+Both of these references refer to resources with an id of `128`, but they each have a different type constraint. Kestrel can use this
+constrain to help identify the correct resource.
+
+The next level of constraint builds upon the first (as in you must constrain the resource type, before this). This constraint works on _Containers_.
+Resource Containers act as a method of grouping related resources together. This can be useful for preventing unintentional resource conflicts across
+data files. We'll get into the exact mechanics of data files and resources in another section, but to briefly summarize; resources are loaded from
+data files into a _Resource Manager_ within Kestrel. If a resource has the same resource type and id as an existing resource, it will override/replace
+the existing resource. Sometimes this is the desired behaviour, particularly if you are trying to patch functionality in a game. However you may also
+want to not worry about your content being accidentally broken by collisions with other data files.
+
+This is done using containers. By default all resources are created into the _Global Resource Container_. We can specify a resource container in the
+reference like so.
+
+```kdl
+#[[Container.]ResourceType.]128
+#CoreGame.StringList.150
+#Expansion.StringList.150
+```
+
+By specifying the container, both of these resource references now refer to different resources.
+
+### Resource Declaration
+
+### Modules
+
+### Variables
+
+### Functions
