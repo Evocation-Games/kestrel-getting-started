@@ -141,7 +141,10 @@ We can add constraints to a resource reference. There are two levels of constrai
 the resource type.
 
 ```kdl
+// Format
 #[ResourceType.]128
+
+// Examples
 #StringList.128
 #MacintoshPicture.128
 ```
@@ -160,7 +163,10 @@ This is done using containers. By default all resources are created into the _Gl
 reference like so.
 
 ```kdl
+// Format
 #[[Container.]ResourceType.]128
+
+// Examples
 #CoreGame.StringList.150
 #Expansion.StringList.150
 ```
@@ -168,6 +174,53 @@ reference like so.
 By specifying the container, both of these resource references now refer to different resources.
 
 ### Resource Declaration
+Declaring resources is central to actual adding data into a data file in the form of resources. We briefly looked at an example using `StringList`
+earlier.
+
+The basic structure of a declaration is...
+
+```kdl
+declare ResourceType {
+    // Add resources here
+};
+```
+
+You can also specify that all resources within the declaration belong to a container...
+
+```kdl
+declare Container.ResourceType {
+
+};
+```
+
+Individual resources are then created by using one of the following...
+
+```kdl
+new (#id, "Resource Name") {
+    // Specify fields and values...
+};
+
+override (#id, "Resource Name") {
+    // Specify fields and values to change from the original...
+};
+
+duplicate (#source as #result, "Resource Name") {
+    // Duplicate the source resource, and create use it to create the resulting 
+    // resource with the specified fields and values changed
+};
+```
+
+The most common method of creating resources is using the `new` keyword. This will create a brand new
+resource.
+
+`override` will check for an existing resource that is known to KDL, read it and change any fields that are
+specified with new values and save the result to the output. Note that it does _not_ replace the original 
+resource.
+
+`duplicate` will check for an existing resource that is known to KDL, read it and change any fields in the same
+way as `override` does. However it will save the result to the output with a new id as specified.
+
+### Components
 
 ### Modules
 
