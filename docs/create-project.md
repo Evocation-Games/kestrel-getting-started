@@ -87,4 +87,4 @@ kestrel --game build/Dialog.rsrx
 If everything has worked correctly, then you should have a kestrel test player open a window titled "DialogExample", with an ImGui dialog and console
 present within it.
 
-![img](https://github.com/Evocation-Games/kestrel-getting-started/blob/899be4644c662d23d5e8aa6499465c212c827431/docs/images/dialog-example.png)
+![img](https://github.com/Evocation-Games/kestrel-getting-started/blob/0a25560263362f89d293c53240dc8ace796ec632/docs/images/dialog-example.png)
