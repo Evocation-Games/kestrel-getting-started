@@ -33,3 +33,6 @@ TBC
 
 ## Windows
 TBC
+
+## Optional Extra
+- [KDL.vsix](https://github.com/EvocationGames/KestrelEngine/releases/download/v0.9/KDL.vsix) is an extension for VS Code that provides syntax highlighting for KDL.
